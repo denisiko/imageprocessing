@@ -55,4 +55,4 @@ For downloading an image file make a GET request to the resource link as followi
 curl 'http://localhost:8000/collections/images?deviceId=12345&timestamp=2024-08-18T02%3A04%3A07Z' -o image.png
 ```
 
-The GET parameters `deviceId` and `timestamp` are obligatory. If they are not provided or invalid you will get a `400` response. If they do not match an existing image you will get a `404` response.
+The GET parameters `deviceId` and `timestamp` are obligatory. `timestamp` must be properly URL-encoded. If the parameters are not provided or invalid you will get a `400` response. If they do not match an existing image you will get a `404` response.
