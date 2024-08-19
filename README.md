@@ -21,7 +21,7 @@ For convenience an empty database setup is already included inside the SQLite fi
 
 ## Usage
 
-For now the API only provides one resource type **image-db** with the semantic interface type **collection**. In accordance with the CoRE standard they can be discovered by sending following GET requests:
+For now the API only provides one resource type for an image collection with the semantic notation `simple.act` and the semantic interface type **batch** with the notation `core.b`. In accordance with the CoRE standard they can be discovered by sending following GET requests:
 
 ```console
 curl http://localhost:8000/.well-known/core
@@ -30,7 +30,7 @@ curl http://localhost:8000/collections
 This will give you the following output:
 
 ```console
-</collections/images>;rt="image-db";if="collection"
+</collections/images>;rt="simple.act";if="core.b"
 ```
 
 For sending image data you can make a POST request to this resource link. The payload must contain values for the keys `deviceId`, `timestamp` and `imageData`. The value for `imageData` must consist of a base64 string encoding the file's binary content. `timestamp` must contain a valid ISO 8601 datetime representation. Valid payload formats are JSON and CBOR.
