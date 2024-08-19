@@ -8,7 +8,7 @@ class CoreResourceDiscoveryAPIView(APIView):
     """
     def get(self, request, *args, **kwargs):
         """
-        For now only one resource link is available (image-db).
+        For now only one resource link is available.
         """
-        link = '</collections/images>;rt="image-db";if="collection"'
+        link = '</collections/images>;rt="simple.act";if="core.b"'
         return Response(link, content_type="application/link-format")
