@@ -48,3 +48,11 @@ curl -d 'a36864657669636549646531323334356974696d657374616d7074323032342d30382d3
 ```
 
 After successfully sending the image you will get a confirmation in the form of a response with the status `201` and the newly created image's metadata as content.
+
+For downloading an image file make a GET request to the resource link as following:
+
+```console
+curl 'http://localhost:8000/collections/images?deviceId=12345&timestamp=2024-08-18T02%3A04%3A07Z' -o image.png
+```
+
+The GET parameters `deviceId` and `timestamp` are obligatory. If they are not provided or invalid you will get a `400` response. If they do not match an existing image you will get a `404` response.
